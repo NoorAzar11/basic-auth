@@ -3,22 +3,19 @@
 
 const bcrypt = require('bcrypt');
 
-const auThBasic = require('../models/Auth');
+const {auThBasic} = require('../app');
 
 
 module.exports = async (req, res, next) => {
-
+console.log(req.body)
 
     try {
 
 
         req.body.password = await bcrypt.hash(req.body.password, 10);
 
-        const record = await auThBasic.create({
-
-            username: req.body.username,
-            password: req.body.password
-        });
+     req.record=await auThBasic.create(req.body);
+      
 
         next();
 

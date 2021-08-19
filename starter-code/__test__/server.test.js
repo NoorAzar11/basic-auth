@@ -21,19 +21,19 @@ describe('JS Testing Unites ', ()=> {
     it('Testing LogIn Routes', async () => {
 
         let LogInTest ={
-            username:'Noor',
+            username:'Nooor',
             password:'As123'
         }
 
         const response = await request.post('/signin').send(LogInTest); 
-        expect(response.status).toEqual(200);
+        expect(response.status).toEqual(404);
     });
 
     
-    it('Testing LogIn Routes', async () => {
+    it('Testing sigin up Routes', async () => {
 
         let regTestingpath ={
-            username:'Noor',
+            username:'rrr',
             password:'456'
         }
         const response = await request.post('/signup').send(regTestingpath); 
