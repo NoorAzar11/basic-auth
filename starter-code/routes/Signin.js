@@ -6,8 +6,8 @@ const router=express.Router();
 
 const logInMid=require('../middlewares/SignIn');
 
-router.post('/sigin',logInMid,(req,res)=>{
-res.status(200).json(user);
+router.post('/singin',logInMid,(req,res)=>{
+res.status(200).json(req.user);
 
 });
 
